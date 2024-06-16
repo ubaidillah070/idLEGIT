@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ID CPA LEGIT - JOKOSEMUJUNG</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #343a40; /* Warna latar belakang gelap */
+        color: #fff; /* Warna teks putih */
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto 0; /* Margin atas ditambahkan */
+        background-color: #454d55; /* Warna latar belakang panel */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative; /* Posisi relatif untuk menempatkan popup */
+    }
+    .panel {
+        border: none; /* Hapus garis luar */
+    }
+    .form-control {
+        background-color: #6c757d; /* Warna latar belakang input */
+        color: #fff; /* Warna teks input */
+    }
+    .btn-copy {
+        background-color: #28a745; /* Warna tombol hijau */
+    }
+    #linkCount {
+        color: #fff !important; /* Warna teks putih */
+        font-weight: bold; /* Teks bold */
+    }
+    .link-text {
+        font-weight: bold; /* Teks bold */
+        color: #fff !important; /* Warna teks putih */
+    }
+    .copy-success {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: none;
+        padding: 5px 10px; /* Ubah ukuran padding */
+        background-color: #28a745;
+        border-radius: 5px;
+        z-index: 999;
+        font-size: 14px; /* Ubah ukuran font */
+    }
+    .mini-browser {
+        width: 100%;
+        height: 600px; /* Ubah tinggi sesuai kebutuhan */
+    }
+    #result {
+        background-color: #6c757d; /* Warna latar belakang */
+        color: #000; /* Warna teks hitam */
+        border: none; /* Hapus garis luar */
+        border-radius: 5px; /* Ubah radius sudut */
+        padding: 10px; /* Ubah ukuran padding */
+        resize: none; /* Nonaktifkan pengubah ukuran */
+        height: 150px; /* Ubah tinggi */
+        overflow-y: auto; /* Tambahkan scrollbar jika perlu */
+    }
+</style>
+</head>
+<body>
+<div class="container panel-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Random String Generator</h2>
+        </div>
+        <div class="panel-body">
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="numOfStrings" placeholder="Number of strings" min="1" max="100">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" onclick="generateRandomStrings()">Generate</button>
+                <button class="btn btn-danger" onclick="clearLinkList()">Clear Link List</button>
+                </div>
+            </div>
+            <div class="output">
+                <!-- Sembunyikan textarea untuk output dari Random String Generator -->
+                <textarea class="form-control" id="outputArea" rows="5" style="display: none;"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="linkList">List Link:</label>
+                <!-- Kolom list link -->
+                <textarea class="form-control" id="linkList" rows="5" oninput="updateLinkCount()"></textarea>
+                <small id="linkCount" class="form-text text-muted" data-original-text="link(s)"><span class="link-text">0</span> <span class="link-text">link</span></small>
+            </div>
+            <!-- Tombol untuk menghapus isi kolom list link -->
+
+            <div class="form-group">
+                <label for="customText">Custom Text:</label>
+                <textarea class="form-control" id="customText" rows="5" placeholder="{# = link}"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="generateText()">Generate Text</button>
+            <button type="button" class="btn btn-secondary btn-copy" onclick="copyToClipboard('result')">Copy Generated Text</button>
+            <div class="form-group mt-3">
+                <label for="result">Result:</label>
+                <textarea class="form-control" id="result" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Notice -->
+    <div class="copy-success" id="copyNotice">
+        copied !
+    </div>
+    <!-- End Popup Notice -->
+</div>
+
+<script>
+    function generateRandomString(length) {
+        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charset.length);
+            result += charset[randomIndex];
+        }
+        return result;
+    }
+
+    function generateRandomStrings() {
+        const numOfStrings = document.getElementById('numOfStrings').value;
+
+        if (numOfStrings <= 0) {
+            // Jika nilai tidak valid, tampilkan pesan kesalahan
+            alert('Please enter a valid number greater than 0.');
+            return;
+        }
+
+        const domain = 'https://l.wl.co/l?u=https://iloov.eu/';
+        let result = '';
+
+        for (let i = 0; i < numOfStrings; i++) {
+            const randomString = generateRandomString(5);
+            const url = domain + randomString;
+            result += url + '\n';
+        }
+
+        // Menambahkan hasil random ke kolom list link
+        document.getElementById('linkList').value += result;
+
+        // Memperbarui jumlah link dan teks count
+        updateLinkCount();
+    }
+
+    function copyToClipboard(elementId) {
+        const outputArea = document.getElementById(elementId);
+        outputArea.select();
+        document.execCommand('copy');
+        showCopiedToast('Copied to clipboard!');
+    }
+
+    function showCopiedToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 2000);
+    }
+
+    function updateLinkCount() {
+        var linkListTextarea = document.getElementById("linkList");
+        var linkList = linkListTextarea.value.trim().split('\n');
+        var linkCountElement = document.getElementById("linkCount");
+        var linkCountText = linkCountElement.dataset.originalText; // Ambil teks asli dari dataset
+        linkCountElement.textContent = linkList.length + " " + linkCountText; // Gabungkan jumlah link dengan teks asli
+    }
+
+    function generateText() {
+        var linkListTextarea = document.getElementById("linkList");
+        var linkList = linkListTextarea.value.trim().split('\n');
+        var customText = document.getElementById("customText").value.trim().split('\n');
+        var result = '';
+
+        // Take only one link for merging
+        var currentLink = linkList.shift() || '';
+
+        for (var i = 0; i < customText.length; i++) {
+            var line = customText[i];
+
+            // Check if the line contains #
+            if (line.includes("#")) {
+                // Replace all # with the current link
+                line = line.replace(/#+/g, currentLink);
+            }
+
+            // Append the modified line to the result
+            result += line + '\n';
+        }
+
+        // Display the result
+        document.getElementById("result").value = result.trim();
+        linkListTextarea.value = linkList.join('\n'); // Update the link list textarea
+        updateLinkCount(); // Update link count after generating text
+    }
+
+    function clearLinkList() {
+        document.getElementById("linkList").value = ""; // Menghapus isi dari kolom list link
+        updateLinkCount(); // Memperbarui jumlah link dan teks count
+    }
+</script>
+</body>
+</html>
