@@ -1,64 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdefecf.partnermatch.link/bundle/949/assets/images/favicon.png" rel="icon" type="image/x-icon">
-<title>LEGIT VS JOKOSEMUJUNG</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
-    body {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://cdefecf.partnermatch.link/bundle/949/assets/images/favicon.png" rel="icon" type="image/x-icon">
+    <title>LEGIT VS JOKOSEMUJUNG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
         background-color: #343a40;
         color: #fff;
-		border-radius: 10px;
-    }
-    .container {
-        max-width: 600px;
-        margin: 15px auto;
+        font-family: Arial, sans-serif
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto
+      }
+
+      .card {
         background-color: #343a40;
-        padding: 5px;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgb(0 0 0 / 30%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-	.container1 {
-		padding-toptop: 60px;
-        max-width: 600px;
-        margin: 20px auto;
-		margin-top: 5px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 50%);
+        padding: 10px;
+        margin-bottom: 2px;
+        margin-top: 2px
+      }
+
+      .card-body {
         background-color: #343a40;
-        padding: 5px;
+        border-radius: 18px;
+        padding: 1px
+      }
+
+      .card-header {
+        background-color: #343a40;
+        font-color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        border-bottom: 1px solid #555;
+        padding: 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px
+      }
+
+      .tab {
+        overflow: hidden;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgb(0 0 0 / 30%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-    .form-control {
+        display: flex
+      }
+
+      .tab button {
+        background-color: #343a40;
+        flex: 1;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        padding: 5px 0;
+        transition: .1s;
+        color: #fff;
+        border: 1px solid #555;
+        border-radius: 5px
+      }
+
+      .tab button:hover {
+        background-color: #555
+      }
+
+      .tab button.active {
+        background-color: #007bff
+      }
+
+      .tabcontent {
+        display: none;
+        padding: 20px
+      }
+
+      .tabcontent.active {
+        display: block
+      }
+
+      .form-control {
         background-color: #000;
         color: #fff;
-		box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
-		font-size: 20px;
-    }
-    .btn-copy {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
+        font-size: 20px
+      }
+
+      .btn-copy {
         background-color: #28a745;
-		box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-	.btn-primary {
-		box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-	.btn-danger {
-		box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-		.btn-warning {
-		box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-    #linkCount {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%)
+      }
+
+      .btn-primary {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%)
+      }
+
+      .btn-danger {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%)
+      }
+
+      .btn-warning {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 20%)
+      }
+
+      #linkCount {
         color: #fff !important;
-        font-weight: bold;
-    }
-    .link-text {
-        font-weight: bold;
-        color: #fff !important;
-    }
-    .copy-success {
+        font-weight: 700
+      }
+
+      .link-text {
+        font-weight: 700;
+        color: #fff !important
+      }
+
+      .copy-success {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -67,90 +123,144 @@
         background-color: #28a745;
         border-radius: 5px;
         z-index: 999;
-        font-size: 14px;
-    }
-    .card {
+        font-size: 14px
+      }
+
+      .card {
         background-color: #343a40;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgb(0 0 0 / 50%), 0 8px 16px rgb(0 0 0 / 50%);
         padding: 10px;
         margin-bottom: 2px;
-		margin-top: 2px;
-    }
-    .card-header {
-        font-size: 11px;
-        font-weight: bold;
+        margin-top: 2px;
+        font-weight: 700;
         margin-bottom: 10px;
-		box-shadow: 0 2px 4px rgb(0 0 0 / 20%), 0 8px 16px rgb(0 0 0 / 20%);
-    }
-    .card-body {
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%), 0 8px 16px rgb(0 0 0 / 20%)
+      }
+
+      .card-body {
         background-color: #343a40;
         border-radius: 18px;
-        padding: 1px;
-    }
+        padding: 1px
+      }
 
-</style>
-</head>
-<body>
-<div class="container">
-    <div class="card">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-warning active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked> 𝐋𝐄𝐆𝐈𝐓
-                </label>
-                <label class="btn btn-warning">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> 𝐉𝐎𝐊𝐎𝐒𝐄𝐌𝐔𝐉𝐔𝐍𝐆
-                </label>
-            </div>
+      .btn-group-toggle .btn {
+        background-color: #343a40;
+        color: #fff;
+        border: 1px solid #555;
+        border-radius: 5px
+      }
+
+      .btn-group-toggle .btn.active {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: #fff
+      }
+
+      .btn-group-toggle .btn:not(.active):hover {
+        background-color: #8b0000;
+        border-color: #8b0000;
+        color: #fff
+      }
+
+      .banner {
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 5px;
+        position: relative
+      }
+
+      .banner img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 5px
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="banner">
+          <img src="https://down-cvs-id.img.susercontent.com/id-11134211-7r98o-lwqbnmfshs8a62.webp" alt="Deskripsi gambar">
         </div>
-    </div>
-	<div class="container1">
-    <div class="card">
-	    <div class="card-header">
-        <div class="card-body">
-            <div class="input-group mb-1">
+      </div>
+      <div class="card">
+        <div class="tab">
+          <button class="tablinks" onclick='openTab(event,"tab1")' id="defaultOpen">Get Link</button>
+          <button class="tablinks" onclick='openTab(event,"tab2")'>Get UID ADD</button>
+        </div>
+      </div>
+      <div id="tab1" class="tabcontent active">
+        <div class="container">
+          <div class="card">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-warning active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked="checked"> 𝐋𝐄𝐆𝐈𝐓 </label>
+              <label class="btn btn-warning">
+                <input type="radio" name="options" id="option2" autocomplete="off"> 𝐉𝐎𝐊𝐎𝐒𝐄𝐌𝐔𝐉𝐔𝐍𝐆 </label>
+            </div>
+          </div>
+        </div>
+        <div class="container1">
+          <div class="card">
+            <div class="card-body">
+              <div class="input-group mb-1">
                 <input type="number" class="form-control" id="numOfStrings" placeholder="Number of strings" min="1" max="100">
                 <div class="input-group-append">
-                    <button class="btn btn-primary btn-bordered" type="button" onclick="generateRandomStrings()">Generate</button>
-                    <button class="btn btn-danger btn-small" onclick="clearLinkList()">Clear Link List</button>
+                  <button class="btn btn-primary btn-bordered" type="button" onclick="generateRandomStrings()">Generate</button>
+                  <button class="btn btn-danger btn-small" onclick="clearLinkList()">Clear Link List</button>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="linkList">List Link:</label>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label class="link-text" for="linkList">List Link:</label>
                 <textarea class="form-control" id="linkList" rows="2" oninput="updateLinkCount()"></textarea>
-                <small id="linkCount" class="form-text text-muted"><span class="link-text">0</span> link(s)</small>
+                <small id="linkCount" class="form-text text-muted" data-original-text="link(s)"><span class="link-text">0</span> <span class="link-text">link</span></small>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="customText">Custom Text:</label>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="form-group">
+                <label class="link-text" for="customText">Custom Text:</label>
                 <textarea class="form-control" id="customText" rows="3" placeholder="{# = link}"></textarea>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="generateText()">Generate</button>
-            <button type="button" class="btn btn-secondary btn-copy" onclick="copyToClipboard('result')">Copy Text</button>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group mt-3">
-                <label for="result">Result:</label>
-                <textarea class="form-control" id="result" rows="3"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="copy-success" id="copyNotice">
-        copied!
-    </div>
-</div>
+															</div>
+															<button type="button" class="btn btn-primary" onclick="generateText()">Generate</button>
+															<button type="button" class="btn btn-secondary btn-copy" onclick='copyToClipboard("result")'>Copy Text</button>
+														</div>
+													</div>
+													<div class="card">
+														<div class="card-body">
+															<div class="form-group mt-3">
+																<label class="link-text" for="result">Result:</label>
+																<textarea class="form-control" id="result" rows="3"></textarea>
+															</div>
+														</div>
+													</div>
+													<div class="copy-success" id="copyNotice">copied!</div>
+												</div>
+											</div>
+											<script>function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
 
-<script>
-    function generateRandomString(length, startsWith) {
+    document.getElementById("defaultOpen").click();
+
+   function generateRandomString(length, startsWith) {
         const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
         let result = startsWith;
         for (let i = 1; i < length; i++) {
@@ -196,7 +306,7 @@
     }
 
     function showCopiedToast(message) {
-        const toast = document.getElementById('copyNotice');
+        const toast = document.getElementById('toast');
         toast.textContent = message;
         toast.style.display = 'block';
         setTimeout(() => {
@@ -208,7 +318,8 @@
         var linkListTextarea = document.getElementById("linkList");
         var linkList = linkListTextarea.value.trim().split('\n');
         var linkCountElement = document.getElementById("linkCount");
-        linkCountElement.textContent = linkList.length + " link(s)";
+        var linkCountText = linkCountElement.dataset.originalText; // Ambil teks asli dari dataset
+        linkCountElement.textContent = linkList.length + " " + linkCountText; // Gabungkan jumlah link dengan teks asli
     }
 
     function generateText() {
@@ -216,29 +327,94 @@
         var linkList = linkListTextarea.value.trim().split('\n');
         var customText = document.getElementById("customText").value.trim().split('\n');
         var result = '';
+
+        // Take only one link for merging
         var currentLink = linkList.shift() || '';
 
         for (var i = 0; i < customText.length; i++) {
             var line = customText[i];
-            if (line.includes('#')) {
-                line = line.replace('#', currentLink);
-                currentLink = linkList.shift() || '';
+
+            // Check if the line contains #
+            if (line.includes("#")) {
+                // Replace all # with the current link
+                line = line.replace(/#+/g, currentLink);
             }
+
+            // Append the modified line to the result
             result += line + '\n';
         }
 
-        document.getElementById("result").value = result;
+        // Display the result
+        document.getElementById("result").value = result.trim();
+        linkListTextarea.value = linkList.join('\n'); // Update the link list textarea
+        updateLinkCount(); // Update link count after generating text
     }
 
     function clearLinkList() {
-        var linkListTextarea = document.getElementById("linkList");
-        linkListTextarea.value = "";
-        updateLinkCount();
+        document.getElementById("linkList").value = ""; // Menghapus isi dari kolom list link
+        updateLinkCount(); // Memperbarui jumlah link dan teks count
     }
-</script>
-<!-- Bootstrap and necessary plugins -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+											</script>
+											<div id="tab2" class="tabcontent">
+												<!DOCTYPE html>
+												<html lang="en">
+													<head>
+														<meta charset="UTF-8">
+															<meta name="viewport" content="width=device-width,initial-scale=1">
+																<title>UID Tool</title>
+																<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+																	<style>body{background-color:#343a40;color:#fff;border-radius:10px}.container{max-width:600px;margin:15px auto;background-color:#343a40;padding:5px;border-radius:10px;box-shadow:0 4px 8px rgb(0 0 0 / 30%),0 8px 16px rgb(0 0 0 / 20%)}.form-control{background-color:#000;color:#fff;box-shadow:0 4px 8px rgb(0 0 0 / 50%),0 8px 16px rgb(0 0 0 / 20%);font-size:20px}.form-control::placeholder{color:#fff;opacity:.75}.form-control-1{background-color:#000;color:#fff;box-shadow:0 4px 8px rgb(0 0 0 / 50%),0 8px 16px rgb(0 0 0 / 20%)}.btn{box-shadow:0 4px 8px rgb(0 0 0 / 50%),0 8px 16px rgb(0 0 0 / 20%)}.copy-success{position:absolute;top:20px;right:20px;display:none;padding:5px 10px;background-color:#28a745;border-radius:5px;z-index:999;font-size:14px}.card{background-color:#343a40;border-radius:10px;box-shadow:0 2px 4px rgb(0 0 0 / 50%),0 8px 16px rgb(0 0 0 / 50%);padding:10px;margin-bottom:2px;margin-top:2px}.card-body{background-color:#343a40;border-radius:18px;padding:1px}</style>
+																</head>
+																<body>
+																	<div class="container">
+																		<div class="row">
+																			<div class="col">
+																				<div class="card">
+																					<div class="card-body">
+																						<textarea id="dataInput" class="form-control" rows="4" onchange="updateCounter()" placeholder="UID Per Line"></textarea>
+																						<div class="link-text" id="counter" class="mt-2" style="display:none">
+																							<strong>UID Tersedia:</strong>
+																							<span id="dataCount">0</span>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row mt-3">
+																			<div class="col">
+																				<div class="card">
+																					<div class="card-body">
+																						<input type="number" id="jumlahData" class="form-control" min="1" placeholder="Jumlah UID diambil">
+																							<div class="mt-3">
+																								<button id="cutButton" class="btn btn-primary" onclick="cutData()" disabled="">Ambil UID</button>
+																								<button class="btn btn-success" onclick="copyHasil()">Salin UID</button>
+																								<div id="successToast" class="copy-success">Hasil berhasil disalin!</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="row mt-3">
+																				<div class="col">
+																					<div class="card">
+																						<div class="card-body">
+																							<textarea class="form-control" id="hasil" rows="4" placeholder="UID Hasil"></textarea>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+																		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+																		<script>function updateCounter(){var e=document.getElementById("dataInput").value.split("\n"),t=document.getElementById("dataCount"),n=document.getElementById("cutButton"),a=document.getElementById("jumlahData");0
+																			<e.length?(t.textContent=e.length,document.getElementById("counter").style.display="block",n.disabled=!1,a.max=e.length,a.disabled=!1):(t.textContent=0,document.getElementById("counter").style.display="none",n.disabled=!0,a.disabled=!0)}function cutData(){var e=document.getElementById("dataInput").value.split("\n"),t=document.getElementById("jumlahData").value,n=e.slice(0,t).join("\n");document.getElementById("hasil").value=n;var a=e.slice(t).join("\n");document.getElementById("dataInput").value=a,updateCounter()}function copyHasil(){var e=document.getElementById("hasil").value;navigator.clipboard.writeText(e).then(function(){var e=document.getElementById("successToast");e.style.display="block",setTimeout(function(){e.style.display="none"},1e3)},function(){alert("Gagal menyalin hasil.")})}
+																			</script>
+																		</body>
+																	</html>
+																</div>
+															</div>
+															<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+															<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+															<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+														</body>
+													</html>
